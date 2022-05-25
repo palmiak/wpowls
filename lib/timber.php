@@ -1,12 +1,10 @@
 <?php
-use TwigWrapper\TwigWrapper;
-use CriticalCssProcessor\CriticalCssProcessor;
 /**
  * Conditional tags for Timber
  */
 
 function asset_path_no_manifest($filename) {
-	$dist_path = get_template_directory_uri() . '/dist/';
+	$dist_path = get_template_directory_uri() . '/dist_tw/';
 	$directory = dirname($filename) . '/';
 	$file = basename($filename);
 
@@ -46,7 +44,7 @@ function add_to_context( $data ) {
 		$data['load_file'] = false;
 	} else {
 		$data['load_file'] = true;
-		$data['css_file_content'] = str_replace( '../fonts/', get_bloginfo( 'template_url' ) . '/dist/fonts/', $data['css_file_content']['body'] );
+		$data['css_file_content'] = str_replace( '../fonts/', get_bloginfo( 'template_url' ) . '/dist_tw/fonts/', $data['css_file_content']['body'] );
 	}
 
 	$data['browser'] = $_SERVER['HTTP_USER_AGENT'];
@@ -90,7 +88,7 @@ if ( class_exists( 'Timber' ) ) {
 }
 
 function asset_path($filename) {
-	$dist_path = get_template_directory_uri() . '/dist/';
+	$dist_path = get_template_directory_uri() . '/dist_tw/';
 	$directory = dirname($filename) . '/';
 	$file = basename($filename);
 

@@ -5,11 +5,11 @@ let args = require('yargs');
 let purgeFromHTML = require('purgecss-from-html');
 
 let path = require('path');
-mix.setPublicPath('./dist');
+mix.setPublicPath('./dist_tw');
 
 if ( args.argv.env == 'purge' ) {
 	mix
-	.postCss("./assets/css/app.css", "./dist/css/app-purge.css", [
+	.postCss("./assets_tw/css/app.css", "./dist_tw/css/app-purge.css", [
 		require("tailwindcss"),
 		require('postcss-purgecss-laravel')({
 			content: ['./stat_test/**/*.html'],
@@ -26,13 +26,13 @@ if ( args.argv.env == 'purge' ) {
 	]);
 } else {
 	mix
-	.js('./assets/js/app.js', './dist/js/app.js')
-	.js('./assets/js/editor.js', './dist/js/editor.js')
-	.postCss("./assets/css/app.css", "./dist/css/app.css", [
+	.js('./assets_tw/js/app.js', './dist_tw/js/app.js')
+	.js('./assets_tw/js/editor.js', './dist_tw/js/editor.js')
+	.postCss("./assets_tw/css/app.css", "./dist_tw/css/app.css", [
 		require("tailwindcss"),
 	]);
 
-	mix.copyDirectory('./assets/images', './dist/images');
-	mix.copyDirectory('./assets/fonts', './dist/fonts');
+	mix.copyDirectory('./assets_tw/images', './dist_tw/images');
+	mix.copyDirectory('./assets_tw/fonts', './dist_tw/fonts');
 }
 
