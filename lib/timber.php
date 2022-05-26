@@ -44,7 +44,8 @@ function add_to_context( $data ) {
 		$data['load_file'] = false;
 	} else {
 		$data['load_file'] = true;
-		$data['css_file_content'] = str_replace( '../fonts/', get_bloginfo( 'template_url' ) . '/dist_tw/fonts/', $data['css_file_content']['body'] );
+		$data['css_file_content'] = str_replace( '/fonts/', get_bloginfo( 'template_url' ) . '/dist_tw/fonts/', $data['css_file_content']['body'] );
+		//$data['css_file_content'] = $data['css_file_content']['body'];
 	}
 
 	$data['browser'] = $_SERVER['HTTP_USER_AGENT'];

@@ -2,43 +2,99 @@
 
 {% block main %}
 
-<article class="single-entry-wrapper">
-	<header class="single-entry-header" role="heading" aria-level="1">
-		<h2>{{ post.title }}</h2>
-	</header>
-</article>
+	<div class="md:grid md:grid-cols-2 md:gap-20 items-center mt-20">
 
-<div class="editions-list blog-list">
-{% for post in posts %}
-	{% set img = Image( post.guest_editor.photo ) %}
-	<a class="edition blog-post guest-post" href="{{ post.link }}">
-		<div>
-			<picture class="post-cover m-b-20" role="img">
-				<source media="(max-width:640px)" type="image/webp"
-					srcset="{{ img | resize(640,640, 'center') | towebp }}"
-					width="640" height="640">
-				<source media="(max-width:640px)"
-					srcset="{{ img | resize(640,640, 'center') }}"
-					width="640" height="640">
-				<source media="(min-width: 641px) and (max-width:1023px)" type="image/webp"
-					srcset="{{ img | resize(1024,1024, 'center') | towebp }}"
-					width="1024" height="1024">
-				<source media="(min-width: 641px) and (max-width:1023px)"
-					srcset="{{ img | resize(1024, 1024, 'center') }}"
-					width="1024" height="1024">
-				<source media="(min-width:1024px)" type="image/webp"
-					srcset="{{ img | resize(500,500, 'center') | towebp }}"
-					width="500" height="500">
-				<img src="{{ img | resize(500,500, 'center') }}"
-					alt="{{ post.title }}" loading="lazy"
-					width="500" height="500">
-			</picture>
-			<h2>{{ post.guest_editor.name }}</h2>
-			{{ post.guest_editor.description | wpautop }}
-			<small>{{ __( 'read more', 'sasquatch' ) }}</small>
+		<div class="prose prose-lg mb-10 md:mb-0">
+			<span class="uppercase font-owlFont text-owl-orange mb-6 block">{{ post.title }}</span>
+			<h1 class="lg:text-h1lg md:text-h1md sm:text-h1sm mb-10 text-owl-dark-blue">
+				Championing the 37 nontraditional path
+			</h1>
+			<p>
+				Peggy creates more value than she captures, amplifies underrepresented contributors, and champions as many people as possible.
+			</p>
+			<div class="text-right">
+				<a href="#content" class="inline-block p-4">
+					<img src="{{ theme.link }}/dist_tw/images/arrow-down-orange.svg" class="m-0" alt="scroll down">
+				</a>
+			</div>
 		</div>
-	</a>
-{% endfor %}
-</div>
+
+		<div>
+			<div class="picture relative">
+				<div class="absolute bottom-10 right-10 z-10">
+					{% include 'views/parts/icons/dots-white.twig' %}
+				</div>
+
+				<div class="absolute -top-20 -left-2/4 -z-10">
+					{% include 'views/parts/icons/dots-dark.twig' %}
+				</div>
+
+				<picture>
+					<img src="https://images.unsplash.com/photo-1492447166138-50c3889fccb1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=850&h=760" alt="">
+				</picture>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="content">
+
+		<div class="md:grid md:grid-cols-4 mt-10 md:mt-0 text-sm text-gray-500">
+			<div>
+				<a href="" target="_blank" class="uppercase font-owlFont text-owl-blue hover:text-owl-orange block mb-2">{{ post.title }} // @Gziolo</a>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor id libero a rhoncus. Nam mi augue, placerat non sapien a, facilisis consequat leo.
+				</p>
+			</div>
+		</div>
+
+		<div class="mt-20 mb-20 prose prose-lg mx-auto">
+
+			<div class="owl-faq relative pb-10 mb-10">
+				<h2 class="sm:text-h2sm md:text-h2md lg:text-h2lg mb-10 mt-0">
+					<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis pulvinar pulvinar?</span>
+				</h2>
+
+				<div class="answer">
+					<p>
+						<strong class="text-owl-blue">{{ post.title }}:</strong> eget lorem tempus, facilisis est ac, mattis ligula. Sed nec nulla velit. Pellentesque sed tincidunt tortor. Suspendisse porttitor eu dui ac aliquam. Proin sed ante id nunc egestas consequat. Aliquam erat volutpat. Aenean aliquet risus ut rhoncus auctor. Suspendisse condimentum turpis sit amet ipsum tristique, sit amet convallis urna tincidunt. Ut bibendum sagittis dignissim. Suspendisse pretium scelerisque faucibus. Nulla odio sapien, finibus a leo ut, suscipit convallis ligula.
+					</p>
+
+					<p>
+						Integer maximus malesuada neque. Nam dictum sodales lectus, eu mattis diam iaculis at. Pellentesque nec dui venenatis, malesuada sapien vitae, fringilla justo. Nunc lobortis tincidunt luctus. Aenean imperdiet arcu eget eros consectetur aliquet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis ultrices ligula felis, et consequat turpis sagittis in.
+					</p>
+				</div>
+
+				<div class="absolute bottom-0 right-0 z-10">
+					{% include 'views/parts/icons/dots-line.twig' %}
+				</div>
+			</div>
+
+			<div class="owl-faq relative pb-10 mb-10">
+				<h2 class="sm:text-h2sm md:text-h2md lg:text-h2lg mb-10 mt-0">
+					<span>Ut bibendum sagittis dignissim. Suspendisse pretium scelerisque?</span>
+				</h2>
+
+				<div class="answer">
+					<p>
+						<strong class="text-owl-blue">{{ post.title }}:</strong> eget lorem tempus, facilisis est ac, mattis ligula. Sed nec nulla velit. Pellentesque sed tincidunt tortor. Suspendisse porttitor eu dui ac aliquam. Proin sed ante id nunc egestas consequat. Aliquam erat volutpat. Aenean aliquet risus ut rhoncus auctor. Suspendisse condimentum turpis sit amet ipsum tristique, sit amet convallis urna tincidunt. Ut bibendum sagittis dignissim. Suspendisse pretium scelerisque faucibus. Nulla odio sapien, finibus a leo ut, suscipit convallis ligula.
+					</p>
+
+					<p>
+						Integer maximus malesuada neque. Nam dictum sodales lectus, eu mattis diam iaculis at. Pellentesque nec dui venenatis, malesuada sapien vitae, fringilla justo. Nunc lobortis tincidunt luctus. Aenean imperdiet arcu eget eros consectetur aliquet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis ultrices ligula felis, et consequat turpis sagittis in.
+					</p>
+				</div>
+
+				<div class="absolute bottom-0 right-0 z-10">
+					{% include 'views/parts/icons/dots-line.twig' %}
+				</div>
+			</div>
+
+			{{ post.content }}
+
+
+		</div>
+
+	</div>
 
 {% endblock %}

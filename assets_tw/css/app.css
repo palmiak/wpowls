@@ -2,3 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'n27regular';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/n27-regular-webfont.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'n27bold';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/n27-bold-webfont.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/plus-jakarta-sans-v2-latin-ext_latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/plus-jakarta-sans-v2-latin-ext_latin-700.woff2') format('woff2');
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @apply font-owlFontBold text-owl-dark-blue;
+}
+
+.icon svg {
+    transform: translate(-50%, -50%);
+}
+
+.icon svg rect, .icon svg path {
+    @apply transition-all delay-150;
+}
+
+.icon:hover svg rect, .icon:hover svg path {
+    @apply fill-white;
+}
+
+.icon.icon-darkmode svg {
+    @apply h-4 w-auto;
+}
+
+.links svg {
+    @apply h-4 w-auto;
+}
+
+.links svg path, .links svg rect, .links svg circle {
+    @apply fill-owl-blue;
+}
+
+.links a {
+    @apply block p-4 relative transition-all delay-150 hover:-translate-y-1;
+}
+
+#footer ul a {
+    @apply relative;
+}
+
+#footer ul a:before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+
+    @apply bg-owl-light-orange transition-all delay-150 duration-100;
+}
+
+#footer ul a:hover:before {
+    width: 100%;
+}
+
+.owl-faq h2 span {
+    @apply inline bg-gradient-to-r from-owl-orange to-owl-light-orange text-owl-dark-blue;
+    background-size: 100% 2px;
+    background-repeat: no-repeat;
+    background-position: left 85%;
+    padding-bottom: 5px;
+}
+
+/* gutenberg blocks */
+.wp-block-image img {
+	margin: 32px calc(50% - 35vw);
+	max-width: 70vw;
+	width: 70vw;
+}
+
+@media (max-width: 920px) {
+	.wp-block-image img {
+		margin: 32px -76px;
+		max-width: 920px;
+		width: 920px;
+	}
+}
+
+.wp-block-quote {
+    @apply pl-0 border-0 relative;
+}
+
+.wp-block-quote p {
+    @apply bg-gradient-to-r from-owl-dark-blue via-owl-blue to-owl-medium-blue relative font-owlFontBold not-italic sm:text-h2sm md:text-h2md lg:text-h2lg leading-snug;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+

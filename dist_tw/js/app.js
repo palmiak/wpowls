@@ -37,8 +37,10 @@ __webpack_require__.r(__webpack_exports__);
  * Populate Router instance with DOM routes
  * @type {Router} routes - An instance of our router
  */
-//const routes = new Router({common});
 
+var routes = new _lib_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
+  common: (_routes_common__WEBPACK_IMPORTED_MODULE_1___default())
+});
 /** Load Events */
 
 document.addEventListener('DOMContentLoaded', function () {
