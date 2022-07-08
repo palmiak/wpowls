@@ -3,12 +3,13 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				"owl-blue": "#006D77",
-				"owl-dark-blue": "#00241B",
-				"owl-medium-blue": "#83C5BE",
-				"owl-light-blue": "#EDF6F9",
-				"owl-orange": "#E29578",
-				"owl-light-orange": "#FFDDD2",
+				"owl-green": "#64906E",
+				"owl-light-green": "#86B688",
+				"owl-dark-blue": "#273B53",
+				"owl-orange": "#CF9963",
+				"owl-red": "#B56576",
+				"owl-dark-beige": "#E4E4E4",
+				"owl-light-beige": "#FAFAFA",
 			},
 			fontFamily: {
 				owlFont: ["n27regular", "sans-serif"],

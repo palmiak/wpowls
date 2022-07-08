@@ -6,14 +6,14 @@
 	<ul class="block md:flex md:flex-row md:gap-x-6 items-center text-center content-center justify-center mt-10 md:mt-20">
 	{% for item in menu.footer.get_items %}
 		<li>
-			<a class="hover:text-owl-orange transition-all delay-150" href="{{ item.link }}" target="{{ item.target }}" {{ item.target == '_blank' ? 'rel="noopener"' }}>
+			<a class="text-owl-dark-blue hover:text-owl-orange transition-all delay-150" href="{{ item.link }}" target="{{ item.target }}" {{ item.target == '_blank' ? 'rel="noopener"' }}>
 				{{ item.title }}
 			</a>
 		</li>
 	{% endfor %}
 	</ul>
 
-	<p class="text-sm mt-10 text-owl-medium-blue text-center">
+	<p class="text-sm mt-10 text-owl-dark-blue text-center">
 		{{ site.name }} &copy; {{ now|date('Y') }}. Crafted with love by <a href="https://maciekpalmowski.dev/" rel="noopener" target="_blank" title="Maciej Palmowski - WordPress Developer & DevRel Specialist" class="hover:text-owl-orange text-owl-blue">Maciej Palmowski</a> and <a href="https://agnieszkapalmowska.myportfolio.com/" target="_blank" title="Agnieszka Palmowska - UI Designer" rel="noopener" class="hover:text-owl-orange text-owl-blue">Agnieszka Palmowska</a>
 	</p>
 

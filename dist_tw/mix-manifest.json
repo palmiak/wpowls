@@ -3,7 +3,11 @@
     "/js/editor.js": "/js/editor.js",
     "/css/app.css": "/css/app.css",
     "/images/.gitkeep": "/images/.gitkeep",
+    "/images/arrow-down-orange.svg": "/images/arrow-down-orange.svg",
     "/images/close.svg": "/images/close.svg",
+    "/images/dots-dark.svg": "/images/dots-dark.svg",
+    "/images/dots-line.svg": "/images/dots-line.svg",
+    "/images/dots-white.svg": "/images/dots-white.svg",
     "/images/facebook.svg": "/images/facebook.svg",
     "/images/instagram.svg": "/images/instagram.svg",
     "/images/linkedin.svg": "/images/linkedin.svg",
@@ -14,12 +18,8 @@
     "/images/sygnet.svg": "/images/sygnet.svg",
     "/images/theme.svg": "/images/theme.svg",
     "/images/twitter.svg": "/images/twitter.svg",
+    "/fonts/n27-bold-webfont.woff2": "/fonts/n27-bold-webfont.woff2",
     "/fonts/n27-regular-webfont.woff2": "/fonts/n27-regular-webfont.woff2",
     "/fonts/plus-jakarta-sans-v2-latin-ext_latin-700.woff2": "/fonts/plus-jakarta-sans-v2-latin-ext_latin-700.woff2",
-    "/fonts/plus-jakarta-sans-v2-latin-ext_latin-regular.woff2": "/fonts/plus-jakarta-sans-v2-latin-ext_latin-regular.woff2",
-    "/fonts/n27-bold-webfont.woff2": "/fonts/n27-bold-webfont.woff2",
-    "/images/arrow-down-orange.svg": "/images/arrow-down-orange.svg",
-    "/images/dots-dark.svg": "/images/dots-dark.svg",
-    "/images/dots-white.svg": "/images/dots-white.svg",
-    "/images/dots-line.svg": "/images/dots-line.svg"
+    "/fonts/plus-jakarta-sans-v2-latin-ext_latin-regular.woff2": "/fonts/plus-jakarta-sans-v2-latin-ext_latin-regular.woff2"
 }

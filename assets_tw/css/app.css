@@ -54,12 +54,8 @@ h1, h2, h3, h4, h5, h6 {
     @apply h-4 w-auto;
 }
 
-.links svg path, .links svg rect, .links svg circle {
-    @apply fill-owl-blue;
-}
-
 .links a {
-    @apply block p-4 relative transition-all delay-150 hover:-translate-y-1;
+    @apply block p-4 relative transition-all delay-150 hover:-translate-y-1 hover:opacity-50;
 }
 
 #footer ul a {
@@ -74,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 0;
     height: 1px;
 
-    @apply bg-owl-light-orange transition-all delay-150 duration-100;
+    @apply bg-owl-orange transition-all delay-150 duration-100;
 }
 
 #footer ul a:hover:before {
@@ -82,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .owl-faq h2 span {
-    @apply inline bg-gradient-to-r from-owl-orange to-owl-light-orange text-owl-dark-blue;
+    @apply inline bg-gradient-to-r from-owl-green to-owl-light-green text-owl-dark-blue;
     background-size: 100% 2px;
     background-repeat: no-repeat;
     background-position: left 85%;
@@ -98,9 +94,23 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 920px) {
 	.wp-block-image img {
-		margin: 32px -76px;
-		max-width: 920px;
-		width: 920px;
+		margin: 32px 0;
+		max-width: 100%;
+		width: auto;
+	}
+}
+
+.owl-faq-image {
+    margin: 32px calc(50% - 35vw);
+	max-width: 70vw;
+	width: 70vw;
+}
+
+@media (max-width: 1023px) {
+	.wp-block-image img {
+		margin: 32px 0;
+        max-width: 100%;
+        width: auto;
 	}
 }
 
@@ -109,8 +119,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wp-block-quote p {
-    @apply bg-gradient-to-r from-owl-dark-blue via-owl-blue to-owl-medium-blue relative font-owlFontBold not-italic sm:text-h2sm md:text-h2md lg:text-h2lg leading-snug;
+    @apply bg-gradient-to-r from-owl-green to-owl-light-green relative font-owlFontBold not-italic sm:text-h2sm md:text-h2md lg:text-h2lg leading-snug;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+.share-text svg {
+    @apply h-5 w-auto inline;
+}
+
+.share-text svg, .share-text path, .share-text circle {
+    @apply fill-white;
+}
+
+.share-text span {
+    @apply inline-block pr-3;
+}
+
+.owl-quote p {
+    @apply inline;
+}
+
+.owl-quote .tweetme {
+    @apply relative -top-4 left-4;
+}
+
+.owl-quote svg {
+    @apply h-5 w-auto inline;
+}
+
+.owl-quote svg path {
+    @apply hover:fill-owl-orange transition-all delay-150;
+}
