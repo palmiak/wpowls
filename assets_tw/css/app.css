@@ -31,7 +31,19 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-    @apply font-owlFontBold text-owl-dark-blue;
+    @apply font-owlFontBold text-owl-dark-blue dark:text-owl-light-beige;
+}
+
+.owl-content h2 {
+    @apply lg:text-h1lg md:text-h1md sm:text-h1sm;
+}
+
+.owl-content h3 {
+    @apply lg:text-h3lg md:text-h3md sm:text-h3sm;
+}
+
+a {
+    @apply transition-all delay-150;
 }
 
 .icon svg {
@@ -55,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .links a {
-    @apply block p-4 relative transition-all delay-150 hover:-translate-y-1 hover:opacity-50;
+    @apply block p-4 relative hover:-translate-y-1;
 }
 
 #footer ul a {
@@ -77,6 +89,10 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
+.owl-faq h2 {
+    @apply lg:text-h2lg md:text-h2md sm:text-h2sm;
+}
+
 .owl-faq h2 span {
     @apply inline bg-gradient-to-r from-owl-green to-owl-light-green text-owl-dark-blue;
     background-size: 100% 2px;
@@ -84,6 +100,10 @@ h1, h2, h3, h4, h5, h6 {
     background-position: left 85%;
     padding-bottom: 5px;
 }
+
+    .dark .owl-faq h2 span {
+        @apply inline bg-gradient-to-r from-owl-green to-owl-light-green text-owl-dark-beige;
+    }
 
 /* gutenberg blocks */
 .wp-block-image img {
@@ -151,3 +171,25 @@ h1, h2, h3, h4, h5, h6 {
 .owl-quote svg path {
     @apply hover:fill-owl-orange transition-all delay-150;
 }
+
+    .dark .owl-quote svg path {
+        @apply fill-owl-orange hover:fill-owl-light-green;
+    }
+
+.owl-content code {
+    @apply bg-owl-dark-beige text-owl-dark-blue text-lg;
+}
+
+    .dark .owl-content code {
+        @apply bg-owl-dark-blue text-owl-dark-beige text-lg;
+    }
+
+.owl-content a,
+.owl-intro a {
+    @apply text-owl-light-green hover:text-owl-orange;
+}
+
+.owl-content *:not(.owl-faq):not(li):not(.owl-short-bio *):not(.owl-content-inner) {
+    @apply my-8;
+}
+

@@ -1,7 +1,7 @@
 {% block header %}
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="{{ function( 'language_attributes' ) }}" > <![endif]-->
-<html {{ function( 'language_attributes' ) }} class="font-owlFontText scroll-smooth">
+<html {{ function( 'language_attributes' ) }} class="font-owlFontText scroll-smooth dark">
 
 <head>
 	<meta charset="utf-8">
@@ -35,7 +35,7 @@
 </head>
 {% endblock %}
 
-<body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }}">
+<body class="{{ body_class }} {{ page404 ? 'page404' }} {{ newsletter ? 'newsletter' }} dark:bg-gray-800 dark:text-owl-dark-beige">
 
 	{% include 'views/parts/headertw.twig' %}
 	<section data-barba="wrapper">

@@ -13,7 +13,7 @@
 #}
 
 <div class="owl-faq relative pb-10 mb-10">
-	<h2 class="sm:text-h2sm md:text-h2md lg:text-h2lg mb-10 mt-0">
+	<h2 class="mb-10 mt-0">
 		<span>{{ fields.question }}</span>
 	</h2>
 
@@ -21,7 +21,7 @@
 		{{ fields.answer | wpautop }}
 	</div>
 
-	<div class="absolute bottom-0 right-0 z-10">
+	<div class="absolute bottom-0 right-0 z-10 dark:opacity-40">
 		{% include 'views/parts/icons/dots-line.twig' %}
 	</div>
 </div>
