@@ -30,6 +30,9 @@ if ( args.argv.env == 'purge' ) {
 	.js('./assets_tw/js/editor.js', './dist_tw/js/editor.js')
 	.postCss("./assets_tw/css/app.css", "./dist_tw/css/app.css", [
 		require("tailwindcss"),
+	])
+	.postCss("./assets_tw/css/editor.css", "./dist_tw/css/editor.css", [
+		require("tailwindcss"),
 	]);
 
 	mix.copyDirectory('./assets_tw/images', './dist_tw/images');
