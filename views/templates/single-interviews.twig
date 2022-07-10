@@ -5,13 +5,11 @@
 	<div class="md:grid md:grid-cols-2 md:gap-20 items-center mt-20">
 
 		<div class="prose prose-lg mb-10 md:mb-0">
-			<span class="uppercase font-owlFont text-owl-orange mb-6 block">{{ post.title }}</span>
+			<span class="uppercase font-owlFont text-owl-orange mb-6 block">{{ post.meta('name') }}</span>
 			<h1 class="lg:text-h1lg md:text-h1md sm:text-h1sm mb-10 text-owl-dark-blue">
-				Championing the 37 nontraditional path
+				{{ post.title }}
 			</h1>
-			<p>
-				Peggy creates more value than she captures, amplifies underrepresented contributors, and champions as many people as possible.
-			</p>
+			{{ post.meta('description') }}
 			<div class="text-right">
 				<a href="#content" class="inline-block p-4">
 					<img src="{{ theme.link }}/dist_tw/images/arrow-down-orange.svg" class="m-0" alt="scroll down">
@@ -41,15 +39,14 @@
 
 		<div class="md:grid md:grid-cols-4 mt-10 md:mt-0 text-sm text-gray-500">
 			<div>
-				<a href="" target="_blank" class="uppercase font-owlFont text-owl-dark-blue hover:text-owl-orange block mb-2">{{ post.title }} // @Gziolo</a>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor id libero a rhoncus. Nam mi augue, placerat non sapien a, facilisis consequat leo.
-				</p>
+				<a href="https://twitter/{{ post.meta('twitter') }}" target="_blank" class="uppercase font-owlFont text-owl-dark-blue hover:text-owl-orange block mb-2">{{ post.title }} // @{{ post.meta('twitter') }}</a>
+				{{ post.meta( 'short_bio' ) | wpautop }}
 			</div>
 		</div>
 
 		<div class="mt-20 mb-20 prose prose-lg mx-auto">
 
+			{#
 			<div class="owl-faq relative pm-10 mb-10">
 				<h2 class="sm:text-h2sm md:text-h2md lg:text-h2lg mb-10 mt-0">
 					<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mattis pulvinar pulvinar?</span>
@@ -69,7 +66,8 @@
 					{% include 'views/parts/icons/dots-line.twig' %}
 				</div>
 			</div>
-
+			#}
+			{#
 			<div class="owl-faq owl-faq-image owl-faq relative md:grid md:grid-cols-2 md:gap-20 md:items-center">
 				<div class="relative">
 					<div class="absolute bottom-14 -right-6 z-10">
@@ -91,14 +89,9 @@
 					</div>
 				</div>
 			</div>
+			#}
 
-			<blockquote class="wp-block-quote owl-quote">
-				<p>
-					Pellentesque habitant morbi tristique senectus et netus et malesuada
-				</p>
-				<a href="" class="tweetme">{% include 'views/parts/icons/twitter.twig' %}</a>
-			</blockquote>
-
+			{#
 			<div class="owl-faq relative pm-10 mb-10">
 				<h2 class="sm:text-h2sm md:text-h2md lg:text-h2lg mb-10 mt-0">
 					<span>Ut bibendum sagittis dignissim. Suspendisse pretium scelerisque?</span>
@@ -118,7 +111,7 @@
 					{% include 'views/parts/icons/dots-line.twig' %}
 				</div>
 			</div>
-
+#}
 			{{ post.content }}
 
 		</div>
@@ -126,84 +119,27 @@
 		<div class="mt-20 mb-20 mx-auto text-center">
 			<p><strong class="text-owl-dark-blue">If you like this issue, don't forget to share it.</strong></p>
 			<div class="share-text flex flex-col md:flex md:flex-row md:gap-x-6 items-center content-center justify-center">
-				<a href="" class="inline-block font-owlFont mt-2 md:mt-0 py-3 px-6 transition-all delay-150 bg-owl-light-green text-white no-underline rounded-full text-base hover:bg-owl-dark-blue"><span>{% include 'views/parts/icons/facebook.twig' %}</span>Share on Facebook</a>
+				<a href="{{ post.link | tt_share_url }}" class="inline-block font-owlFont mt-2 md:mt-0 py-3 px-6 transition-all delay-150 bg-owl-light-green text-white no-underline rounded-full text-base hover:bg-owl-dark-blue"><span>{% include 'views/parts/icons/twitter.twig' %}</span>Share on Twitter</a>
 
-				<a href="" class="inline-block font-owlFont mt-2 md:mt-0 py-3 px-6 transition-all delay-150 bg-owl-light-green text-white no-underline rounded-full text-base hover:bg-owl-dark-blue"><span>{% include 'views/parts/icons/twitter.twig' %}</span>Share on Twitter</a>
+				<a href="{{ post.link | fb_share_url }}" class="inline-block font-owlFont mt-2 md:mt-0 py-3 px-6 transition-all delay-150 bg-owl-light-green text-white no-underline rounded-full text-base hover:bg-owl-dark-blue"><span>{% include 'views/parts/icons/facebook.twig' %}</span>Share on Facebook</a>
 
-				<a href="" class="inline-block font-owlFont mt-2 md:mt-0 py-3 px-6 transition-all delay-150 bg-owl-light-green text-white no-underline rounded-full text-base hover:bg-owl-dark-blue"><span>{% include 'views/parts/icons/linkedin.twig' %}</span>Share on Linkedin</a>
+				<a href="{{ post.link | ln_share_url }}" class="inline-block font-owlFont mt-2 md:mt-0 py-3 px-6 transition-all delay-150 bg-owl-light-green text-white no-underline rounded-full text-base hover:bg-owl-dark-blue"><span>{% include 'views/parts/icons/linkedin.twig' %}</span>Share on Linkedin</a>
 			</div>
 		</div>
 
 	</div>
 
-
+	{% if other_posts %}
 	<div class="">
 		<h3 class="text-owl-green mb-7 text-center text-2xl">
-			View other interviews:
+			Read other interviews:
 		</h3>
 	</div>
 	<div class="mb-20 lg:grid lg:grid-cols-3 lg:gap-4">
-
-		<article class="p-8 bg-gradient-to-b from-owl-light-beige relative pb-10 rounded-3xl mb-10 lg:mb-0">
-			<div class="picture mb-6">
-				<a href="">
-					<picture>
-						<img src="https://images.unsplash.com/photo-1492447166138-50c3889fccb1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=350" alt="">
-					</picture>
-				</a>
-			</div>
-			<h2 class="text-h2sm">
-				<a href="" class="transition-all delay-150 text-owl-dark-blue hover:text-owl-orange">Interview: Grzegorz Ziółkowski</a>
-			</h2>
-			<p class="text-base text-gray-500 mt-6">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor id libero a rhoncus. Nam mi augue, placerat non sapien a, facilisis consequat leo.
-			</p>
-
-			<div class="absolute bottom-0 right-0 z-10">
-				{% include 'views/parts/icons/dots-line.twig' %}
-			</div>
-		</article>
-
-		<article class="p-8 bg-gradient-to-b from-owl-light-beige relative pb-10 rounded-3xl mb-10 lg:mb-0">
-			<div class="picture mb-6">
-				<a href="">
-					<picture>
-						<img src="https://images.unsplash.com/photo-1492447166138-50c3889fccb1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=350" alt="">
-					</picture>
-				</a>
-			</div>
-			<h2 class="text-h2sm">
-				<a href="" class="transition-all delay-150 text-owl-dark-blue hover:text-owl-orange">Interview: Grzegorz Ziółkowski</a>
-			</h2>
-			<p class="text-base text-gray-500 mt-6">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor id libero a rhoncus. Nam mi augue, placerat non sapien a, facilisis consequat leo.
-			</p>
-
-			<div class="absolute bottom-0 right-0 z-10">
-				{% include 'views/parts/icons/dots-line.twig' %}
-			</div>
-		</article>
-
-		<article class="p-8 bg-gradient-to-b from-owl-light-beige relative pb-10 rounded-3xl mb-10 lg:mb-0">
-			<div class="picture mb-6">
-				<a href="">
-					<picture>
-						<img src="https://images.unsplash.com/photo-1492447166138-50c3889fccb1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=350" alt="">
-					</picture>
-				</a>
-			</div>
-			<h2 class="text-h2sm">
-				<a href="" class="transition-all delay-150 text-owl-dark-blue hover:text-owl-orange">Interview: Grzegorz Ziółkowski</a>
-			</h2>
-			<p class="text-base text-gray-500 mt-6">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor id libero a rhoncus. Nam mi augue, placerat non sapien a, facilisis consequat leo.
-			</p>
-
-			<div class="absolute bottom-0 right-0 z-10">
-				{% include 'views/parts/icons/dots-line.twig' %}
-			</div>
-		</article>
-
+		{% for interview in other_posts %}
+			{% include 'views/parts/interviews-entry.twig' %}
+		{% endfor %}
 	</div>
+	{% endif %}
 
 {% endblock %}

@@ -40,3 +40,9 @@ add_filter( 'timber/acf-gutenberg-blocks-data/owl-interview', function( $context
 
     return $context;
 } );
+
+add_filter( 'timber/acf-gutenberg-blocks-data/owl-quote', function( $context ){
+    $context['fields']['post_url'] = get_the_permalink();
+
+    return $context;
+} );
