@@ -13,14 +13,14 @@
 function acf_block_editor_style() {
 	wp_enqueue_style(
 		'url_css',
-		get_template_directory_uri() . '/dist/css/editor.css',
+		get_template_directory_uri() . '/dist_tw/css/editor.css',
 		array(),
 		'1'
 	);
 
 	wp_enqueue_script(
 		'url_js',
-		get_template_directory_uri() . '/dist/js/editor.js',
+		get_template_directory_uri() . '/dist_tw/js/editor.js',
 		array(),
 		'1',
 		true
