@@ -3,6 +3,25 @@ export default {
         if (window.CSS && CSS.supports('color', 'var(--fake-var)')) {
             new ThemeSwitcher()
         }
+
+		let open_nav = document.getElementById( 'open-navigation' );
+		let close_nav = document.getElementById( 'close-navigation' );
+
+		let nav = document.getElementById( 'owl-navigation' );
+
+		open_nav.addEventListener( 'click', (event) => {
+			event.preventDefault();
+			document.body.classList.add( 'overflow-hidden' );
+			nav.classList.add( 'top-0' );
+			nav.classList.remove( '-top-full' );
+		} );
+
+		close_nav.addEventListener( 'click', (event) => {
+			event.preventDefault();
+			document.body.classList.remove( 'overflow-hidden' );
+			nav.classList.remove( 'top-0' );
+			nav.classList.add( '-top-full' );
+		} );
 	}
 }
 

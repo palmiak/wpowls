@@ -6,7 +6,7 @@
 	</div>
 	<div class="item col-start-2 col-span-2 justify-self-end">
 		<ul class="flex flex-row flex-nowrap gap-4 content-center">
-			<li class="flex flex-row gap-4 items-center">
+			<li id="open-navigation" class="flex flex-row gap-4 items-center">
 				<span class="uppercase text-sm font-owlFont text-owl-dark-blue hidden md:block dark:text-owl-light-beige dark:opacity-40">Menu</span>
 				<small
 					class="icon h-14 w-14 relative block rounded-full bg-owl-light-beige transition ease-in-out delay-150 hover:bg-owl-green cursor-pointer dark:bg-owl-dark-blue dark:hover:bg-owl-light-green">
@@ -48,7 +48,7 @@
 	</div>
 </header>
 
-<nav class="fixed w-full h-full top-0 left-0 right-0 block overflow-x-hidden z-50 transition-all delay-150">
+<nav id="owl-navigation" class="fixed -top-full w-full h-full left-0 right-0 block overflow-x-hidden z-50 transition-all delay-150 bg-owl-dark-blue bg-opacity-60">
 	<div class="w-full lg:min-h-fit min-h-screen overflow-y-auto overflow-x-hidden bg-owl-dark-blue relative">
 		<div class="container mx-auto px-4 my-10 grid grid-cols-3 gap-4 content-center">
 			<div class="item col-start-1">
@@ -58,10 +58,10 @@
 			</div>
 			<div class="item col-start-2 col-span-2 justify-self-end">
 				<ul class="flex flex-row flex-nowrap gap-4 content-center">
-					<li class="flex flex-row gap-4 items-center">
+					<li id="close-navigation" class="flex flex-row gap-4 items-center">
 						<span class="uppercase text-sm font-owlFont text-owl-dark-beige hidden md:block opacity-40">Close</span>
 						<small
-							class="icon h-14 w-14 relative block rounded-full bg-owl-light-beige transition ease-in-out delay-150 hover:bg-owl-green cursor-pointer dark:bg-owl-dark-blue dark:hover:bg-owl-light-green">
+							class="icon h-14 w-14 relative block rounded-full bg-owl-light-beige transition ease-in-out delay-150 hover:bg-owl-green cursor-pointer dark:bg-owl-orange dark:hover:bg-owl-light-green">
 							<svg class="absolute inset-1/2" width="16" height="16" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" class="fill-owl-green dark:fill-owl-dark-beige"/></svg>
 						</small>
 					</li>
