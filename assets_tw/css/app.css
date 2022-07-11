@@ -193,3 +193,17 @@ a {
     @apply my-8;
 }
 
+.owl-main-menu a:before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+
+    @apply bg-owl-light-green transition-all delay-150;
+}
+
+.owl-main-menu a:hover:before {
+    width: 100%;
+}

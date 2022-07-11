@@ -6,7 +6,7 @@
 	<ul class="block md:flex md:flex-row md:gap-x-6 items-center text-center content-center justify-center mt-10 md:mt-20">
 	{% for item in menu.footer.get_items %}
 		<li>
-			<a class="text-owl-dark-blue hover:text-owl-orange transition-all delay-150 dark:text-owl-light-beige dark:hover:text-owl-orange" href="{{ item.link }}" target="{{ item.target }}" {{ item.target == '_blank' ? 'rel="noopener"' }}>
+			<a class="text-owl-dark-blue hover:text-owl-orange dark:text-owl-light-beige dark:hover:text-owl-orange" href="{{ item.link }}" target="{{ item.target }}" {{ item.target == '_blank' ? 'rel="noopener"' }}>
 				{{ item.title }}
 			</a>
 		</li>
