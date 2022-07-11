@@ -19,13 +19,15 @@
 
 	<div>
 		<div class="picture relative">
-			<div class="absolute bottom-10 right-10 z-10">
+			<div class="absolute bottom-10 right-10 z-20">
 				{% include 'views/parts/icons/dots-white.twig' %}
 			</div>
 
 			<div class="absolute -top-20 -left-2/4 -z-10 dark:opacity-40">
 				{% include 'views/parts/icons/dots-dark.twig' %}
 			</div>
+
+			<div class="owl-gradient inset-0 z-10 mix-blend-overlay opacity-75 rounded-tr-[50px]"></div>
 
 			<picture>
 				<source media="(max-width:767px)"
@@ -34,7 +36,7 @@
 				<source media="(min-width: 768px) and (max-width:1023px)"
 					srcset="https://images.unsplash.com/photo-1492447166138-50c3889fccb1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=750" />
 
-				<img src="https://images.unsplash.com/photo-1492447166138-50c3889fccb1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&h=750"
+				<img class="rounded-tr-[50px]" src="https://images.unsplash.com/photo-1492447166138-50c3889fccb1?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&h=750"
 					alt="">
 			</picture>
 		</div>

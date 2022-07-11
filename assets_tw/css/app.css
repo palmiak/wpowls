@@ -207,3 +207,15 @@ a {
 .owl-main-menu a:hover:before {
     width: 100%;
 }
+
+.owl-gradient {
+    @apply absolute w-full h-full bg-gradient-to-r from-owl-dark-blue via-owl-red to-owl-orange transition-all delay-150;
+    background-size: 600% 600%;
+    animation: OwlGradientAnimation 7s ease infinite;
+}
+
+@keyframes OwlGradientAnimation {
+    0%{background-position:0% 56%}
+    50%{background-position:100% 45%}
+    100%{background-position:0% 56%}
+}
