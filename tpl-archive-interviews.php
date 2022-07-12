@@ -12,4 +12,4 @@ $args                   = array(
 );
 $context['posts'] = new Timber\PostQuery( $args, 'OwlPost' );
 
-Timber::render( 'views/templates/tpl-archive-guests.twig', $context );
+Timber::render( 'views/templates/tpl-archive-interviews.twig', $context );

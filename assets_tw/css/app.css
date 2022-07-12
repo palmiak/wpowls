@@ -76,17 +76,24 @@ a {
 
 #footer ul a:before {
     content: "";
-    position: absolute;
     bottom: -2px;
     left: 0;
     width: 0;
     height: 1px;
 
-    @apply bg-owl-orange transition-all delay-150 duration-100;
+    @apply absolute bg-owl-orange transition-all delay-150 duration-100;
 }
 
 #footer ul a:hover:before {
     width: 100%;
+}
+
+.owl-page-title span {
+    @apply inline bg-gradient-to-r from-owl-orange to-owl-red;
+    background-size: 100% 2px;
+    background-repeat: no-repeat;
+    background-position: left 85%;
+    padding-bottom: 5px;
 }
 
 .owl-faq h2 {
