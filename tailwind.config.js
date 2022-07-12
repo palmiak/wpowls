@@ -1,6 +1,9 @@
 module.exports = {
 	content: ["./views/**/*.twig"],
 	darkMode: 'class',
+	safelist: [
+		'top-0',
+	],
 	theme: {
 		extend: {
 			colors: {

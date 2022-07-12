@@ -33,6 +33,8 @@ function setup() {
 			'header'   => 'Header',
 			'footer'   => 'Footer',
 			'top_menu' => 'Top menu',
+			'tw_menu_left'   => 'TW Menu Left',
+			'tw_menu_right'   => 'TW Menu Right',
 		)
 	);
 

@@ -1,6 +1,6 @@
 <header id="header" class="{{ body_class }} container mx-auto px-4 my-10 grid grid-cols-3 gap-4 content-center">
 	<div class="item col-start-1">
-		<a href="">
+		<a href="{{ site.url }}">
 			{% include 'views/parts/logo.twig' %}
 		</a>
 	</div>
@@ -19,15 +19,17 @@
 				</small>
 			</li>
 			<li class="hidden md:block">
-				<small
-					class="icon h-14 w-14 relative block rounded-full bg-owl-light-beige transition ease-in-out delay-150 hover:bg-owl-orange cursor-pointer dark:bg-owl-dark-blue dark:hover:bg-owl-orange">
-					<svg class="absolute inset-1/2" width="14" height="14" viewBox="0 0 14 14" fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M13.8186 12.1015L11.0822 9.36976C10.9454 9.26049 10.7812 9.17854 10.617 9.17854H10.1792C10.918 8.22244 11.3832 7.02049 11.3832 5.68195C11.3832 2.5678 8.81106 0 5.69161 0C2.54481 0 0 2.5678 0 5.68195C0 8.82341 2.54481 11.3639 5.69161 11.3639C7.00506 11.3639 8.20906 10.9268 9.19415 10.162V10.6263C9.19415 10.7902 9.24887 10.9541 9.38569 11.0907L12.0947 13.7951C12.3683 14.0683 12.7788 14.0683 13.025 13.7951L13.7912 13.0302C14.0649 12.7844 14.0649 12.3746 13.8186 12.1015ZM5.69161 9.17854C3.7488 9.17854 2.18908 7.62146 2.18908 5.68195C2.18908 3.76976 3.7488 2.18537 5.69161 2.18537C7.60706 2.18537 9.19415 3.76976 9.19415 5.68195C9.19415 7.62146 7.60706 9.17854 5.69161 9.17854Z"
-							fill="#E29578" class="fill-owl-orange" />
-					</svg>
-				</small>
+				<a href="{{ options.search_form_page.url }}">
+					<small
+						class="icon h-14 w-14 relative block rounded-full bg-owl-light-beige transition ease-in-out delay-150 hover:bg-owl-orange cursor-pointer dark:bg-owl-dark-blue dark:hover:bg-owl-orange">
+						<svg class="absolute inset-1/2" width="14" height="14" viewBox="0 0 14 14" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M13.8186 12.1015L11.0822 9.36976C10.9454 9.26049 10.7812 9.17854 10.617 9.17854H10.1792C10.918 8.22244 11.3832 7.02049 11.3832 5.68195C11.3832 2.5678 8.81106 0 5.69161 0C2.54481 0 0 2.5678 0 5.68195C0 8.82341 2.54481 11.3639 5.69161 11.3639C7.00506 11.3639 8.20906 10.9268 9.19415 10.162V10.6263C9.19415 10.7902 9.24887 10.9541 9.38569 11.0907L12.0947 13.7951C12.3683 14.0683 12.7788 14.0683 13.025 13.7951L13.7912 13.0302C14.0649 12.7844 14.0649 12.3746 13.8186 12.1015ZM5.69161 9.17854C3.7488 9.17854 2.18908 7.62146 2.18908 5.68195C2.18908 3.76976 3.7488 2.18537 5.69161 2.18537C7.60706 2.18537 9.19415 3.76976 9.19415 5.68195C9.19415 7.62146 7.60706 9.17854 5.69161 9.17854Z"
+								fill="#E29578" class="fill-owl-orange" />
+						</svg>
+					</small>
+				</a>
 			</li>
 			<li>
 				<a href="#" id="themeswitcher" aria-label="Change theme color">
@@ -71,35 +73,22 @@
 
 		<div class="relative z-20 container mx-auto px-4 py-20 md:grid md:grid-cols-2 md:gap-20 lg:items-end">
 			<ul class="owl-main-menu mb-10 md:mb-10">
-				<li>
-					<a href="" class="relative font-owlFont lg:text-h1lg text-h2md text-owl-dark-beige hover:text-owl-light-green inline-block tracking-wide">All WP Owls Issues</a>
-				</li>
-				<li>
-					<a href="" class="relative font-owlFont lg:text-h1lg text-h2md text-owl-dark-beige hover:text-owl-light-green inline-block tracking-wide">Featured articles</a>
-				</li>
-				<li>
-					<a href="" class="relative font-owlFont lg:text-h1lg text-h2md text-owl-dark-beige hover:text-owl-light-green inline-block tracking-wide">Guest Editors</a>
-				</li>
-				<li>
-					<a href="" class="relative font-owlFont lg:text-h1lg text-h2md text-owl-dark-beige hover:text-owl-light-green inline-block tracking-wide">Interviews</a>
-				</li>
+				{% for item in menu.tw_menu_left.get_items %}
+					<li>
+						<a href="{{ item.link }}" class="relative font-owlFont lg:text-h1lg text-h2md text-owl-dark-beige hover:text-owl-light-green inline-block tracking-wide">
+							{{ item.title }}
+						</a>
+					</li>
+				{% endfor %}
 			</ul>
 			<ul class="owl-main-menu">
-				<li class="mb-4">
-					<a href="" class="relative font-owlFont text-xl text-owl-dark-beige hover:text-owl-light-green inline-block tracking-wide">Home</a>
-				</li>
-				<li class="mb-4">
-					<a href="" class="relative font-owlFont text-xl text-owl-dark-beige hover:text-owl-light-green inline-block tracking-wide">About us</a>
-				</li>
-				<li class="mb-4">
-					<a href="" class="relative font-owlFont text-xl text-owl-dark-beige hover:text-owl-light-green inline-block tracking-wide">Become a sponsor</a>
-				</li>
-				<li class="mb-4">
-					<a href="" class="relative font-owlFont text-xl text-owl-dark-beige hover:text-owl-light-green inline-block tracking-wide">Join to our newsletter</a>
-				</li>
-				<li class="mb-4">
-					<a href="" class="relative font-owlFont text-xl text-owl-dark-beige hover:text-owl-light-green inline-block tracking-wide">Write for us</a>
-				</li>
+				{% for item in menu.tw_menu_right.get_items %}
+					<li class="mb-4">
+						<a href="{{ item.link }}" class="relative font-owlFont text-xl text-owl-dark-beige hover:text-owl-light-green inline-block tracking-wide">
+							{{ item.title }}
+						</a>
+					</li>
+				{% endfor %}
 			</ul>
 		</div>
 
