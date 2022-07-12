@@ -106,7 +106,8 @@ a {
     }
 
 /* gutenberg blocks */
-.wp-block-image {
+.wp-block-image,
+.wp-block-image picture {
     @apply block relative;
 }
 
@@ -115,12 +116,12 @@ a {
 	max-width: 70vw;
 	width: 70vw;
 
-    @apply block rounded-bl-[50px] transition-all delay-150;
+    @apply block rounded-bl-[50px] rounded-tr-[50px] transition-all delay-150;
 }
 
-.wp-block-image:before {
+.wp-block-image picture:before {
     content: "";
-    @apply rounded-bl-[50px] block absolute inset-0 z-10 mix-blend-overlay opacity-75 w-full h-full bg-gradient-to-r from-owl-dark-blue via-owl-red to-owl-orange transition-all delay-150;
+    @apply rounded-bl-[50px] rounded-tr-[50px] block absolute inset-0 z-10 mix-blend-overlay opacity-75 w-full h-full bg-gradient-to-r from-owl-dark-blue via-owl-red to-owl-orange transition-all delay-150;
     background-size: 600% 600%;
     animation: OwlGradientAnimation 7s ease infinite;
     margin: 0 calc(50% - 35vw);
@@ -129,7 +130,7 @@ a {
 }
 
 @media (max-width: 1023px) {
-	.wp-block-image:before {
+	.wp-block-image picture:before {
 		margin: 0;
         max-width: 100%;
         width: auto;
@@ -213,7 +214,7 @@ a {
     @apply text-owl-light-green hover:text-owl-orange;
 }
 
-.owl-content *:not(.owl-faq):not(li):not(.owl-short-bio *):not(.owl-content-inner):not(.owl-faq .absolute):not(.owl-faq .absolute svg) {
+.owl-content *:not(.owl-faq):not(li):not(.owl-short-bio *):not(.owl-content-inner):not(.owl-faq .absolute):not(.owl-faq .absolute svg):not(figcaption) {
     @apply my-8;
 }
 
