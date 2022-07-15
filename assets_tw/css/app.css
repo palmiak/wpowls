@@ -126,7 +126,7 @@ a {
     @apply block rounded-bl-[50px] rounded-tr-[50px] transition-all delay-150;
 }
 
-.wp-block-image picture:before {
+.wp-block-image:hover picture:before {
     content: "";
     @apply rounded-bl-[50px] rounded-tr-[50px] block absolute inset-0 z-10 mix-blend-overlay opacity-75 w-full h-full bg-gradient-to-r from-owl-dark-blue via-owl-red to-owl-orange transition-all delay-150;
     background-size: 600% 600%;
@@ -240,7 +240,7 @@ a {
     width: 100%;
 }
 
-.owl-gradient {
+.owl-gradient:hover {
     @apply absolute w-full h-full bg-gradient-to-r from-owl-dark-blue via-owl-red to-owl-orange transition-all delay-150;
     background-size: 600% 600%;
     animation: OwlGradientAnimation 7s ease infinite;
