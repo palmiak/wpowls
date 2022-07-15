@@ -1,4 +1,16 @@
 <?php
+/**
+ * Sober Intervention - cleaning wp-admin
+ * more info on https://github.com/soberwp/intervention
+ */
+use function Sober\Intervention\intervention;
+
+if ( function_exists( 'Sober\Intervention\intervention' ) ) {
+	intervention( 'add-acf-page', 'Theme Options', array( 'administrator' ) );
+	intervention( 'add-dashboard-redirect' );
+	intervention( 'add-svg-support' );
+}
+
 function setup() {
 	// Make theme available for translation
 	// Community translations can be found at https://github.com/roots/sage-translations
@@ -48,9 +60,13 @@ add_action( 'after_setup_theme', 'setup' );
  */
 
 function assets() {
-		wp_enqueue_script( 'sasquatch/js', asset_path( 'js/app.js' ), '', null, true );
-		wp_deregister_style( 'wp-block-library' );
-		wp_dequeue_style( 'global-styles' );
+	if ( is_page( 'interviews' ) || get_post_type() === 'interviews' ) {
+		wp_enqueue_script( 'sasquatch/js', asset_path( 'js/app.js', true ), '', null, true );
+	} else {
+		wp_enqueue_script( 'sasquatch/js', asset_path( 'js/app.js', false ), '', null, true );
+	}
+	wp_deregister_style( 'wp-block-library' );
+	wp_dequeue_style( 'global-styles' );
 }
 add_action( 'wp_enqueue_scripts', 'assets', 100 );
 
@@ -77,18 +93,6 @@ function acf_json_load_point( $paths ) {
 
 	// return
 	return $paths;
-}
-
-/**
- * Sober Intervention - cleaning wp-admin
- * more info on https://github.com/soberwp/intervention
- */
-use function Sober\Intervention\intervention;
-
-if ( function_exists( 'Sober\Intervention\intervention' ) ) {
-	intervention( 'add-acf-page', 'Theme Options', array( 'administrator' ) );
-	intervention( 'add-dashboard-redirect' );
-	intervention( 'add-svg-support' );
 }
 
 function deregister_embed() {

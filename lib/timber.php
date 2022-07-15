@@ -36,18 +36,38 @@ function add_to_context( $data ) {
 	if ( is_page( 'interviews' ) || get_post_type() === 'interviews' ) {
 		$is_tw = true;
 		$dir = '/dist_tw/';
-	}
 
-	$data['css_file'] = asset_path( 'css/app.css', $is_tw );
-	$data['css_file_content'] = wp_remote_get( $data['css_file'] );
+		$data['css_file'] = asset_path( 'css/app.css', $is_tw );
+		$data['css_file_content'] = wp_remote_get( $data['css_file'] );
 
-	if ( is_wp_error( $data['css_file_content'] ) ) {
-		$data['load_file'] = false;
+		if ( is_wp_error( $data['css_file_content'] ) ) {
+			$data['load_file'] = false;
+		} else {
+			$data['load_file'] = true;
+			$data['css_file_content'] = str_replace( '/fonts/', get_bloginfo( 'template_url' ) . $dir . 'fonts/', $data['css_file_content']['body'] );
+			//$data['css_file_content'] = $data['css_file_content']['body'];
+		}
+
 	} else {
-		$data['load_file'] = true;
-		$data['css_file_content'] = str_replace( '/fonts/', get_bloginfo( 'template_url' ) . $dir . 'fonts/', $data['css_file_content']['body'] );
-		//$data['css_file_content'] = $data['css_file_content']['body'];
+		$data['css_file'] = asset_path( 'css/app.css' );
+		$data['css_file_purged'] = asset_path( 'css/app-purged.css' );
+		$data['css_file_purged_content'] = wp_remote_get( $data['css_file_purged'] );
+
+
+		if ( is_wp_error( $data['css_file_purged_content'] ) ) {
+			$data['css_file_content'] = wp_remote_get( $data['css_file'] );
+			if ( is_wp_error( $data['css_file_content'] ) ) {
+				$data['load_file'] = false;
+			} else {
+				$data['load_file'] = true;
+				$data['css_file_content'] = str_replace( '../fonts/', get_bloginfo( 'template_url' ) . '/dist/fonts/', $data['css_file_content']['body'] );
+			}
+		} else {
+			$data['load_file'] = true;
+			$data['css_file_content'] = str_replace( '../fonts/', get_bloginfo( 'template_url' ) . '/dist/fonts/', $data['css_file_purged_content']['body'] );
+		}
 	}
+
 
 	$data['browser'] = $_SERVER['HTTP_USER_AGENT'];
 	$data['get_data'] = $_GET;
