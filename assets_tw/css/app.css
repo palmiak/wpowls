@@ -244,10 +244,14 @@ a {
     width: 100%;
 }
 
-.owl-gradient:hover {
-    @apply absolute w-full h-full bg-gradient-to-r from-owl-dark-blue via-owl-red to-owl-orange transition-all delay-150;
+.owl-gradient {
+    @apply absolute w-full h-full bg-gradient-to-r from-owl-dark-blue via-owl-red to-owl-orange transition-all opacity-0 mix-blend-overlay duration-150 inset-0 z-10;
     background-size: 600% 600%;
     animation: OwlGradientAnimation 7s ease infinite;
+}
+
+.owl-gradient:hover {
+    @apply opacity-100;
 }
 
 @keyframes OwlGradientAnimation {

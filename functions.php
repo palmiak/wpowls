@@ -36,3 +36,7 @@ add_action(
 
 add_action( 'init', array( 'sowka\css_vars\Css_Vars', 'get_instance' ) );
 add_action( 'init', array( 'sowka\customizer\Customizer', 'get_instance' ), 99 );
+
+function is_tailwind() {
+	return ( is_page( 'interviews' ) || get_post_type() === 'interviews' || is_page( 'articles' ) );
+}
