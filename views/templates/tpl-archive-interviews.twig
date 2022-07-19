@@ -5,7 +5,7 @@
 <div class="md:grid md:grid-cols-2 md:gap-20 items-center mt-20">
 
 	<div class="mb-10 md:mb-0 dark:text-owl-dark-beige">
-		<h1 class="owl-page-title lg:text-h1lg md:text-h1md sm:text-h1sm mb-10 text-owl-dark-blue dark:text-owl-dark-beige">
+		<h1 class="owl-page-title lg:text-h1lg md:text-h1md text-h2md mb-10 text-owl-dark-blue dark:text-owl-dark-beige">
 			<span>
 				{{ post.title }}
 			</span>
@@ -23,13 +23,14 @@
 				{{ post.meta( 'button' ).title }}
 			</span>
 		</a>
+		{% endif %}
 
 		<div class="text-right">
 			<a href="#content" class="inline-block p-4">
 				<img src="{{ theme.link }}/dist_tw/images/arrow-down-orange.svg" class="m-0" alt="scroll down">
 			</a>
 		</div>
-		{% endif %}
+
 	</div>
 
 	<div>
