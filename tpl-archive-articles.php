@@ -8,7 +8,7 @@ $context['post'] = Timber::get_posts()[0];
 
 $args                   = array(
 	'posts_per_page' => 60,
-	'post_type'		 => 'interviews',
+	'post_type'		 => 'articles',
 );
 $context['posts'] = new Timber\PostQuery( $args, 'OwlPost' );
 

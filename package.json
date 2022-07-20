@@ -9,7 +9,8 @@
     "development": "gulp build",
     "audit": "gulp audit",
     "es-lint": "gulp esLint",
-    "purgecss": "gulp purgecss"
+    "purgecss": "gulp purgecss",
+    "production": "NODE_ENV=production webpack --progress --hide-modules"
   },
   "author": "Maciej Palmowski <m.palmowski@spiders.agency>",
   "license": "MIT",

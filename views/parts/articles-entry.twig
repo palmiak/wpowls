@@ -1,39 +1,41 @@
+{% set image = Image( article.thumbnail ) %}
 <article class="p-8 bg-gradient-to-b from-owl-light-beige dark:from-owl-dark-blue relative pb-10 rounded-3xl mb-10 lg:mb-0">
     <div class="picture mb-6 relative">
-        <a class="block relative" href="{{ interview.link }}">
+        <a class="block relative" href="{{ article.link }}">
 			<div class="owl-gradient rounded-tr-[50px]"></div>
             <picture class="block rounded-tr-[50px]">
-                {# <source media="(max-width:767px)"
-					srcset="{{ image|resize( 650, 550 )|towebp }}" />
+                <source media="(max-width:767px)"
+					srcset="{{ image|resize( 680, 400 )|towebp }}"
+					width="680"
+					height="400"
+				/>
 
 				<source media="(min-width: 768px) and (max-width:1023px)"
-					srcset="{{ image|resize( 680, 550 )|towebp }}" />
+					srcset="{{ image|resize( 680, 400 )|towebp }}"
+					width="680"
+					height="400"
+				/>
 
-				<img class="rounded-tr-[50px]" src="{{ image|resize( 450, 380 )|towebp }}"
-					alt="{{ image.alt }}" loading="lazy"> #}
-
-				<source media="(max-width:767px)"
-					srcset="https://images.unsplash.com/photo-1542546068979-b6affb46ea8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=680&h=400&q=80" />
-
-				<source media="(min-width: 768px) and (max-width:1023px)"
-					srcset="https://images.unsplash.com/photo-1542546068979-b6affb46ea8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=680&h=400&q=80" />
-
-				<img class="rounded-tr-[50px]" src="https://images.unsplash.com/photo-1542546068979-b6affb46ea8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=680&h=400&q=80"
+				<img class="rounded-tr-[50px]" src="{{ image|resize( 680, 400 )|towebp }}"
+					width="680"
+					height="400"
 					alt="{{ image.alt }}" loading="lazy">
             </picture>
         </a>
     </div>
     <h2 class="text-h2md lg:text-h2lg">
-        <a href="{{ interview.link }}" class="text-owl-dark-blue hover:text-owl-orange dark:text-owl-light-green dark:hover:text-owl-dark-beige">
-			<span class="uppercase text-sm font-owlFont text-owl-light-green dark:text-owl-dark-beige mb-1 block">12th April 2022</span>
-			Why WordPress developers should use CI/CD?
+        <a href="{{ article.link }}" class="text-owl-dark-blue hover:text-owl-orange dark:text-owl-light-green dark:hover:text-owl-dark-beige">
+			<span class="uppercase text-sm font-owlFont text-owl-light-green dark:text-owl-dark-beige mb-1 block">
+				{{ article.date( options.date_format ) }}
+			</span>
+			{{ article.title }}
 		</a>
     </h2>
     <p class="text-base text-gray-500 dark:text-owl-dark-beige mt-6">
-    	Development nowadays has become a bit more complicated than it used to be. On the other hand, the importance of having a website has grown too. It can be the most important part of our business.
+    	{{ article.preview().length(50).read_more('') }}
     </p>
 
-	<a href="" class="block text-base text-owl-light-green dark:text-owl-orange hover:text-owl-dark-blue dark:hover:text-owl-dark-beige font-bold mt-4">
+	<a href="{{ article.link }}" class="block text-base text-owl-light-green dark:text-owl-orange hover:text-owl-dark-blue dark:hover:text-owl-dark-beige font-bold mt-4">
 		Read more
 	</a>
 
